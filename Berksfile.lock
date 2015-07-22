@@ -1,0 +1,36 @@
+DEPENDENCIES
+  tileserver
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.7.0)
+  build-essential (2.2.3)
+  chef_handler (1.2.0)
+  dmg (2.2.2)
+  git (4.3.0)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  gunicorn (1.2.0)
+    python (>= 0.0.0)
+  packagecloud (0.0.19)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  runit (1.7.2)
+    packagecloud (>= 0.0.0)
+  tileserver (0.0.1)
+    apt (>= 0.0.0)
+    git (>= 0.0.0)
+    gunicorn (>= 0.0.0)
+    python (>= 0.0.0)
+    runit (>= 0.0.0)
+    user (>= 0.0.0)
+  user (0.4.2)
+  windows (1.37.0)
+    chef_handler (>= 0.0.0)
+  yum (3.6.3)
+  yum-epel (0.6.2)
+    yum (~> 3.2)
