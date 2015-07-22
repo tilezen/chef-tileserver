@@ -9,10 +9,6 @@ default[:tileserver][:gunicorn][:worker_class] = 'gevent'
 default[:tileserver][:gunicorn][:worker_processes] = node[:cpu][:total] * 2 + 1
 default[:tileserver][:gunicorn][:enabled] = true
 
-default[:deploy][:tilestache][:scm][:repository] = 'https://github.com/mapzen/vector-datasource.git'
-default[:deploy][:tilestache][:scm][:revision] = 'master'
-default[:opsworks][:instance][:layers] = []
-
 default[:tileserver][:runit][:svwait] = 180
 
 default[:tileserver][:pip_requirements] = %w(
@@ -46,9 +42,5 @@ default[:tileserver][:postgresql][:password] = ''
 default[:tileserver][:redis][:enabled] = false
 default[:tileserver][:store][:enabled] = false
 
-default[:tilestache][:cfg_path] = node[:tileserver][:cfg_path]
-default[:mapzen_tilestache][:cache][:type] = 'none'
-default[:mapzen_tilestache][:max_age] = 0
-default[:mapzen][:postgresql][:endpoint] = 'localhost'
-default[:mapzen][:secrets][:postgresql][:password][:gisuser] = 'secret'
-default[:mapzen_tilestache][:query_dir_name] = "#{node[:tileserver][:cfg_path]}/osm-vector-queries"
+default[:tileserver][:vector_datasource][:repository] = 'https://github.com/mapzen/vector-datasource.git'
+default[:tileserver][:vector_datasource][:revision] = 'dev'

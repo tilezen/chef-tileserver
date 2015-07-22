@@ -7,14 +7,10 @@ runit_service 'tileserver' do
   sv_timeout node[:tileserver][:runit][:svwait]
 end
 
-deploy "#{node[:tileserver][:cfg_path]}/osm-vector-queries" do
-  repo    node[:deploy][:tilestache][:scm][:repository]
-  branch  node[:deploy][:tilestache][:scm][:revision]
-  migrate false
-
-  symlink_before_migrate.clear
-  create_dirs_before_symlink %w(tmp public config deploy)
-
+git "#{node[:tileserver][:cfg_path]}/vector-datasource" do
+  action :sync
+  repository node[:tileserver][:vector_datasource][:repository]
+  revision node[:tileserver][:vector_datasource][:revision]
   notifies :restart, 'runit_service[tileserver]', :delayed
 end
 

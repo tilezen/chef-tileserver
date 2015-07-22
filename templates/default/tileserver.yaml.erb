@@ -5,7 +5,7 @@ postgresql:
   user: <%= node[:tileserver][:postgresql][:user] %>
   password: <%= node[:tileserver][:postgresql][:password] %>
 tilestache:
-  config: <%= node[:tilestache][:cfg_path] %>/tilestache.conf
+  config: <%= node[:tileserver][:cfg_path] %>/vector-datasource/tilestache.cfg
 <%- if node[:tileserver][:store][:enabled] -%>
 store:
   type: <%= node[:tileserver][:store][:type] %>
