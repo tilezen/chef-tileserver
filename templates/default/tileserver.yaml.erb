@@ -1,0 +1,31 @@
+postgresql:
+  host: <%= node[:tileserver][:postgresql][:host] %>
+  port: <%= node[:tileserver][:postgresql][:port] %>
+  dbnames: <%= node[:tileserver][:postgresql][:dbnames] %>
+  user: <%= node[:tileserver][:postgresql][:user] %>
+  password: <%= node[:tileserver][:postgresql][:password] %>
+tilestache:
+  config: <%= node[:tilestache][:cfg_path] %>/tilestache.conf
+<%- if node[:tileserver][:store][:enabled] -%>
+store:
+  type: <%= node[:tileserver][:store][:type] %>
+  name: <%= node[:tileserver][:store][:name] %>
+<%- if node[:tileserver][:store][:path] -%>
+  path: <%= node[:tileserver][:store][:path] %>
+<%- end -%>
+<%- if node[:tileserver][:store][:reduced_redundancy] %>
+  reduced_redundancy: <%= node[:tileserver][:store][:reduced_redundancy] %>
+<%- end -%>
+<%- end -%>
+<%- if node[:tileserver][:redis][:enabled] -%>
+redis:
+<%- if node[:tileserver][:redis][:host] -%>
+  host: <%= node[:tileserver][:redis][:host] %>
+<%- end -%>
+<%- if node[:tileserver][:redis][:port] -%>
+  port: <%= node[:tileserver][:redis][:port] %>
+<%- end -%>
+<%- if node[:tileserver][:redis][:db] -%>
+  db: <%= node[:tileserver][:redis][:db] %>
+<%- end -%>
+<%- end -%>

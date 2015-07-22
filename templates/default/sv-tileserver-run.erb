@@ -1,0 +1,4 @@
+#!/bin/bash
+
+exec 2>&1
+exec chpst -u <%= node[:tileserver][:user][:name] %> /usr/bin/gunicorn "tileserver:wsgi_server('<%= node[:tileserver][:cfg_path] %>/tileserver.yaml')" --log-file <%= node[:tileserver][:log_path] %>/gunicorn.log -c <%= node[:tileserver][:cfg_path] %>/gunicorn.cfg
