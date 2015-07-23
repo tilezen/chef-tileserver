@@ -2,7 +2,6 @@ default[:tileserver][:user][:name] = 'tileserver'
 default[:tileserver][:user][:enabled] = true
 
 default[:tileserver][:cfg_path] = '/etc/tileserver'
-default[:tileserver][:log_path] = '/var/log/tileserver'
 default[:tileserver][:run_path] = '/var/run/tileserver'
 
 default[:tileserver][:gunicorn][:worker_class] = 'gevent'

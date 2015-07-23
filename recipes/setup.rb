@@ -26,10 +26,8 @@ package 'python-tornado' do
 end
 
 directory node[:tileserver][:cfg_path]
-[node[:tileserver][:log_path], node[:tileserver][:run_path]].each do |d|
-  directory d do
-    owner node[:tileserver][:user][:name]
-  end
+directory node[:tileserver][:run_path] do
+  owner node[:tileserver][:user][:name]
 end
 
 gunicorn_config "#{node[:tileserver][:cfg_path]}/gunicorn.cfg" do
