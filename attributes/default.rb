@@ -16,12 +16,11 @@ default[:tileserver][:pip_requirements] = %w(
   argparse==1.2.1
   boto==2.33.0
   hiredis==0.1.5
-  mapbox-vector-tile==0.0.10
+  mapbox-vector-tile==0.0.11
   ModestMaps==1.4.6
   Pillow==2.6.1
   protobuf==2.6.0
   psycopg2==2.5.4
-  python-memcached==1.53
   PyYAML==3.11
   redis==2.10.3
   Shapely==1.4.3
