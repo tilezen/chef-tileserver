@@ -31,3 +31,7 @@ redis:
   db: <%= node[:tileserver][:redis][:db] %>
 <%- end -%>
 <%- end -%>
+<%- if node[:tileserver][:health][:enabled] -%>
+health:
+  url: <%= node[:tileserver][:health][:url] -%>
+<%- end -%>
