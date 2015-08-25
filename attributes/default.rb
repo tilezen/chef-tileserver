@@ -44,6 +44,7 @@ default[:tileserver][:store][:enabled] = false
 
 default[:tileserver][:vector_datasource][:repository] = 'https://github.com/mapzen/vector-datasource.git'
 default[:tileserver][:vector_datasource][:revision] = 'dev'
+default[:tileserver][:vector_datasource][:path] = "#{node[:tileserver][:cfg_path]}/vector-datasource"
 
 default[:tileserver][:health][:enabled] = true
 default[:tileserver][:health][:url] = '/_health'

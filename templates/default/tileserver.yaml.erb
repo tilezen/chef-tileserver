@@ -5,8 +5,8 @@ postgresql:
   user: <%= node[:tileserver][:postgresql][:user] %>
   password: <%= node[:tileserver][:postgresql][:password] %>
 queries:
-  config: <%= node[:tileserver][:cfg_path] %>/vector-datasource/queries.yaml
-  template-path: <%= node[:tileserver][:cfg_path] %>/vector-datasource/queries
+  config: <%= node[:tileserver][:vector_datasource][:path] %>/queries.yaml
+  template-path: <%= node[:tileserver][:vector_datasource][:path] %>/queries
   reload-templates: false
 <%- if node[:tileserver][:store][:enabled] -%>
 store:

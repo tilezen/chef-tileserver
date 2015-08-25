@@ -7,7 +7,7 @@ runit_service 'tileserver' do
   sv_timeout node[:tileserver][:runit][:svwait]
 end
 
-git "#{node[:tileserver][:cfg_path]}/vector-datasource" do
+git node[:tileserver][:vector_datasource][:path] do
   action :sync
   repository node[:tileserver][:vector_datasource][:repository]
   revision node[:tileserver][:vector_datasource][:revision]
