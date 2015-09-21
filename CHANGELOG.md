@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.0.2
+-----
+* Add ability to configure worker timeout
+* Use variable to represent datasource path
+
 0.0.1
 -----
 * Initial stable
