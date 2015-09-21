@@ -13,6 +13,10 @@ default[:tileserver][:gunicorn][:access_log_format] = '%(h)s %(l)s %(u)s %(t)s "
 
 default[:tileserver][:runit][:svwait] = 180
 
+default[:tileserver][:revision][:tilestache] = 'integration-1'
+default[:tileserver][:revision][:tilequeue] = 'master'
+default[:tileserver][:revision][:tileserver] = 'master'
+
 default[:tileserver][:pip_requirements] = %w(
   argparse==1.2.1
   boto==2.33.0
@@ -29,10 +33,12 @@ default[:tileserver][:pip_requirements] = %w(
   StreetNames==0.1.5
   Werkzeug==0.9.6
   wsgiref==0.1.2
-  git+https://github.com/mapzen/TileStache@integration-1#egg=TileStache
-  git+https://github.com/mapzen/tilequeue#egg=tilequeue
-  git+https://github.com/mapzen/tileserver#egg=tileserver
 )
+default[:tileserver][:pip_requirements] += [
+  "git+https://github.com/mapzen/TileStache@#{node[:tileserver][:revision][:tilestache]}#egg=TileStache",
+  "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
+  "git+https://github.com/mapzen/tileserver@#{node[:tileserver][:revision][:tileserver]}#egg=tileserver"
+]
 
 default[:tileserver][:postgresql][:host] = 'localhost'
 default[:tileserver][:postgresql][:port] = 5432
