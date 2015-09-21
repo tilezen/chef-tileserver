@@ -36,4 +36,5 @@ gunicorn_config "#{node[:tileserver][:cfg_path]}/gunicorn.cfg" do
   pid "#{node[:tileserver][:run_path]}/gunicorn.pid"
   worker_class node[:tileserver][:gunicorn][:worker_class]
   worker_processes node[:tileserver][:gunicorn][:worker_processes]
+  worker_timeout node[:tileserver][:gunicorn][:worker_timeout]
 end
