@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.3
+-----
+* Introduce an easier way to override revisions
+
 0.0.2
 -----
 * Add ability to configure worker timeout
