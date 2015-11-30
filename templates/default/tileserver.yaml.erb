@@ -15,6 +15,9 @@ store:
 <%- if node[:tileserver][:store][:path] -%>
   path: <%= node[:tileserver][:store][:path] %>
 <%- end -%>
+<%- if node[:tileserver][:store][:date_prefix] -%>
+  date-prefix: <%= node[:tileserver][:store][:date_prefix] %>
+<%- end -%>
 <%- if node[:tileserver][:store][:reduced_redundancy] %>
   reduced_redundancy: <%= node[:tileserver][:store][:reduced_redundancy] %>
 <%- end -%>
