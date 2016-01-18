@@ -29,12 +29,14 @@ end
 # a separate file which is installed in a separate run due to a bug in
 # the setup.py of the EDTF library.
 [:pip_requirements_pypi, :pip_requirements_git].each do |req|
-  file "#{node[:tileserver][:cfg_path]}/#{req.to_s}.txt" do
+  req_file = "#{node[:tileserver][:cfg_path]}/#{req}.txt"
+
+  file req_file do
     content node[:tileserver][req].join("\n")
   end
 
   bash "install tileserver #{req.inspect}" do
-    code "pip install -U -r #{node[:tileserver][:cfg_path]}/#{req.to_s}.txt"
+    code "pip install -U -r #{req_file}"
     notifies :restart, 'runit_service[tileserver]', :delayed
   end
 end
