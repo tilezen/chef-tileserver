@@ -24,11 +24,19 @@ end
 # the code would have. Therefore we want to always run the pip install
 # on the requirements file to ensure that we get the latest packages
 # installed.
-file "#{node[:tileserver][:cfg_path]}/pip-requirements.txt" do
-  content node[:tileserver][:pip_requirements].join("\n")
-end
+#
+# note that we split the second set of git-based requirements off into
+# a separate file which is installed in a separate run due to a bug in
+# the setup.py of the EDTF library.
+[:pip_requirements_pypi, :pip_requirements_git].each do |req|
+  req_file = "#{node[:tileserver][:cfg_path]}/#{req}.txt"
 
-bash 'install tileserver pip requirements' do
-  code "pip install -U -r #{node[:tileserver][:cfg_path]}/pip-requirements.txt"
-  notifies :restart, 'runit_service[tileserver]', :delayed
+  file req_file do
+    content node[:tileserver][req].join("\n")
+  end
+
+  bash "install tileserver #{req.inspect}" do
+    code "pip install -U -r #{req_file}"
+    notifies :restart, 'runit_service[tileserver]', :delayed
+  end
 end

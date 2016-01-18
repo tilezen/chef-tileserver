@@ -18,7 +18,7 @@ default[:tileserver][:revision][:tilequeue] = 'master'
 default[:tileserver][:revision][:mapbox_vector_tile] = 'master'
 default[:tileserver][:revision][:tileserver] = 'master'
 
-default[:tileserver][:pip_requirements] = %w(
+default[:tileserver][:pip_requirements_pypi] = %w(
   argparse==1.2.1
   boto==2.33.0
   hiredis==0.1.5
@@ -26,6 +26,7 @@ default[:tileserver][:pip_requirements] = %w(
   Pillow==2.6.1
   protobuf==2.6.0
   psycopg2==2.5.4
+  python-dateutil==2.4.2
   PyYAML==3.11
   redis==2.10.3
   Shapely==1.4.3
@@ -34,7 +35,7 @@ default[:tileserver][:pip_requirements] = %w(
   Werkzeug==0.9.6
   wsgiref==0.1.2
 )
-default[:tileserver][:pip_requirements] += [
+default[:tileserver][:pip_requirements_git] += [
   "git+https://github.com/mapzen/TileStache@#{node[:tileserver][:revision][:tilestache]}#egg=TileStache",
   "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
   "git+https://github.com/mapzen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
