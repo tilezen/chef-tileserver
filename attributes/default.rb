@@ -35,7 +35,7 @@ default[:tileserver][:pip_requirements_pypi] = %w(
   Werkzeug==0.9.6
   wsgiref==0.1.2
 )
-default[:tileserver][:pip_requirements_git] += [
+default[:tileserver][:pip_requirements_git] = [
   "git+https://github.com/mapzen/TileStache@#{node[:tileserver][:revision][:tilestache]}#egg=TileStache",
   "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
   "git+https://github.com/mapzen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
