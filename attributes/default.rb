@@ -23,6 +23,7 @@ default[:tileserver][:pip_requirements_pypi] = %w(
   boto==2.33.0
   hiredis==0.1.5
   ModestMaps==1.4.6
+  numpy==1.10.4
   Pillow==2.6.1
   protobuf==2.6.0
   psycopg2==2.5.4
