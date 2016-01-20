@@ -10,6 +10,7 @@ end
   libpq-dev
   python-pip
   python-pil
+  libjpeg-dev
   gunicorn
 ).each do |p|
   package p
