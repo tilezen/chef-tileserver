@@ -51,6 +51,7 @@ default[:tileserver][:postgresql][:password] = ''
 
 default[:tileserver][:redis][:enabled] = false
 default[:tileserver][:store][:enabled] = false
+default[:tileserver][:queue][:enabled] = false
 
 default[:tileserver][:vector_datasource][:repository] = 'https://github.com/mapzen/vector-datasource.git'
 default[:tileserver][:vector_datasource][:revision] = 'dev'

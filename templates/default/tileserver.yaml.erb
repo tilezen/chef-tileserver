@@ -34,6 +34,11 @@ redis:
   db: <%= node[:tileserver][:redis][:db] %>
 <%- end -%>
 <%- end -%>
+<%- if node[:tileserver][:queue][:enabled] -%>
+queue:
+  type: <%= node[:tileserver][:queue][:type] %>
+  name: <%= node[:tileserver][:queue][:name] %>
+<%- end -%>
 <%- if node[:tileserver][:health][:enabled] -%>
 health:
   url: <%= node[:tileserver][:health][:url] -%>
