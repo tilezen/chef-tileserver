@@ -59,3 +59,5 @@ default[:tileserver][:vector_datasource][:path] = "#{node[:tileserver][:cfg_path
 
 default[:tileserver][:health][:enabled] = true
 default[:tileserver][:health][:url] = '/_health'
+
+default[:tileserver][:formats] = nil
