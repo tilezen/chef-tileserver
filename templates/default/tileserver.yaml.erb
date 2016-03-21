@@ -8,6 +8,9 @@ queries:
   config: <%= node[:tileserver][:vector_datasource][:path] %>/queries.yaml
   template-path: <%= node[:tileserver][:vector_datasource][:path] %>/queries
   reload-templates: false
+<%- if node[:tileserver][:formats] -%>
+formats: [<%= node[:tileserver][:formats].join(', ') %>]
+<%- end -%>
 <%- if node[:tileserver][:store][:enabled] -%>
 store:
   type: <%= node[:tileserver][:store][:type] %>
