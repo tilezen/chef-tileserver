@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.1.0
+-----
+* Support configurable formats
+
 0.0.4
 -----
 * Support custom mapbox-vector-tile revisions
