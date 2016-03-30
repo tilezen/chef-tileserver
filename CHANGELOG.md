@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.2.0
+-----
+* Ensure all python package versions are pegged
+
 0.1.0
 -----
 * Support configurable formats
