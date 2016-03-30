@@ -33,7 +33,7 @@ file "#{node[:tileserver][:cfg_path]}/pip-requirements.txt" do
   content node[:tileserver][:pip_requirements].join("\n")
 end
 
-bash "install tileserver pip requirements" do
+bash 'install tileserver pip requirements' do
   code "pip install -U -r #{node[:tileserver][:cfg_path]}/pip-requirements.txt"
   notifies :restart, 'runit_service[tileserver]', :delayed
 end
