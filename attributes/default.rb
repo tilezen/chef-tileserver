@@ -17,6 +17,7 @@ default[:tileserver][:revision][:tilestache] = 'integration-1'
 default[:tileserver][:revision][:tilequeue] = 'master'
 default[:tileserver][:revision][:mapbox_vector_tile] = 'master'
 default[:tileserver][:revision][:tileserver] = 'master'
+default[:tileserver][:revision][:vector_datasource] = 'master'
 
 default[:tileserver][:pip_requirements_dateutil] = 'python-dateutil==2.4.2'
 default[:tileserver][:pip_requirements] = %w(
@@ -56,7 +57,6 @@ default[:tileserver][:store][:enabled] = false
 default[:tileserver][:queue][:enabled] = false
 
 default[:tileserver][:vector_datasource][:repository] = 'https://github.com/mapzen/vector-datasource.git'
-default[:tileserver][:vector_datasource][:revision] = 'dev'
 default[:tileserver][:vector_datasource][:path] = "#{node[:tileserver][:cfg_path]}/vector-datasource"
 
 default[:tileserver][:health][:enabled] = true

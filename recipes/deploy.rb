@@ -10,7 +10,7 @@ end
 git node[:tileserver][:vector_datasource][:path] do
   action :sync
   repository node[:tileserver][:vector_datasource][:repository]
-  revision node[:tileserver][:vector_datasource][:revision]
+  revision node[:tileserver][:revision][:vector_datasource]
   notifies :restart, 'runit_service[tileserver]', :delayed
 end
 
