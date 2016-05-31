@@ -19,31 +19,35 @@ default[:tileserver][:revision][:mapbox_vector_tile] = 'master'
 default[:tileserver][:revision][:tileserver] = 'master'
 default[:tileserver][:revision][:vector_datasource] = 'master'
 
-default[:tileserver][:pip_requirements_dateutil] = 'python-dateutil==2.4.2'
 default[:tileserver][:pip_requirements] = %w(
   argparse==1.2.1
   boto==2.33.0
-  hiredis==0.1.5
+  future==0.15.2
+  hiredis==0.2.0
+  Jinja2==2.8
+  MarkupSafe==0.23
   ModestMaps==1.4.6
-  numpy==1.10.4
-  Pillow==2.6.1
   protobuf==2.6.0
   psycopg2==2.5.4
   pycountry==1.20
+  pyproj==1.9.5.1
+  python-dateutil==2.4.2
   PyYAML==3.11
-  redis==2.10.3
+  redis==2.10.5
+  requests==2.10.0
   Shapely==1.4.3
   simplejson==3.6.4
+  six==1.10.0
   StreetNames==0.1.5
   Werkzeug==0.9.6
   wsgiref==0.1.2
+  zope.dottedname==4.1.0
+  git+https://github.com/ixc/python-edtf@aad32b8d5cd8848c50fbef92c73697a93cf182ba#edtf
 )
-default[:tileserver][:pip_requirements].push(node[:tileserver][:pip_requirements_dateutil])
 
 default[:tileserver][:pip_requirements] += [
-  "git+https://github.com/mapzen/TileStache@#{node[:tileserver][:revision][:tilestache]}#egg=TileStache",
-  "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
   "git+https://github.com/mapzen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
+  "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
   "git+https://github.com/mapzen/tileserver@#{node[:tileserver][:revision][:tileserver]}#egg=tileserver"
 ]
 
