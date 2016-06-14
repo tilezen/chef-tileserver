@@ -11,6 +11,27 @@ queries:
 <%- if node[:tileserver][:formats] -%>
 formats: [<%= node[:tileserver][:formats].join(', ') %>]
 <%- end -%>
+<%- if node[:tileserver][:buffer] -%>
+buffer:
+<%- node[:tileserver][:buffer].each do |fmt_ext, fmt_data| -%>
+  <%= fmt_ext %>:
+    <%- if fmt_data['layer'] -%>
+    layer:
+    <%- fmt_data['layer'].each do |layer_name, layer_data| -%>
+      <%= layer_name %>:
+        <%- layer_data.each do |geom_type, value| -%>
+        <%= geom_type %>: <%= value %>
+        <%- end -%>
+    <%- end -%>
+    <%- end -%>
+    <%- if fmt_data['geometry'] -%>
+    geometry:
+      <%- fmt_data['geometry'].each do |geom_type, value| -%>
+      <%= geom_type %>: <%= value %>
+      <%- end -%>
+    <%- end -%>
+<%- end -%>
+<%- end -%>
 <%- if node[:tileserver][:store][:enabled] -%>
 store:
   type: <%= node[:tileserver][:store][:type] %>
