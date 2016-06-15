@@ -68,3 +68,4 @@ default[:tileserver][:health][:enabled] = true
 default[:tileserver][:health][:url] = '/_health'
 
 default[:tileserver][:formats] = nil
+default[:tileserver][:buffer] = nil
