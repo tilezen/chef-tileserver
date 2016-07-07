@@ -5,6 +5,7 @@ default[:tileserver][:cfg_path] = '/etc/tileserver'
 default[:tileserver][:run_path] = '/var/run/tileserver'
 
 default[:tileserver][:gunicorn][:enabled] = true
+default[:tileserver][:gunicorn][:listen] = "unix:#{node[:tileserver][:run_path]}/gunicorn.socket"
 default[:tileserver][:gunicorn][:worker_class] = 'gevent'
 default[:tileserver][:gunicorn][:worker_processes] = node[:cpu][:total] * 2 + 1
 default[:tileserver][:gunicorn][:worker_timeout] = 60
