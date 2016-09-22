@@ -30,6 +30,7 @@ default[:tileserver][:pip_requirements] = %w(
   ModestMaps==1.4.6
   protobuf==2.6.0
   psycopg2==2.5.4
+  pyclipper==1.0.5
   pycountry==1.20
   pyproj==1.9.5.1
   python-dateutil==2.4.2
