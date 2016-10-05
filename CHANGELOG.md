@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+0.3.0
+-----
+* Update revision variable name
+* Update dependencies
+  - remove unused
+  - add pycountry python dependency
+  - add pyclipper python dependency
+* Add support for per format buffer configuration
+* Support customizable gunicorn listen configuration
+
 0.2.0
 -----
 * Ensure all python package versions are pegged
