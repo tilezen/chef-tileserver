@@ -71,3 +71,7 @@ default[:tileserver][:health][:url] = '/_health'
 
 default[:tileserver][:formats] = nil
 default[:tileserver][:buffer] = nil
+
+default[:tileserver][:metatile][:enabled]                      = false
+default[:tileserver][:metatile][:size]                         = 1
+default[:tileserver][:metatile][:store_metatile_and_originals] = false
