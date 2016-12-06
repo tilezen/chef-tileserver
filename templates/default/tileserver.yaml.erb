@@ -62,6 +62,12 @@ redis:
 queue:
   type: <%= node[:tileserver][:queue][:type] %>
   name: <%= node[:tileserver][:queue][:name] %>
+  <%- if node[:tilequeue][:queue][:zoom_queue_map] -%>
+  zoom-queue-map:
+    <%- node[:tilequeue][:queue][:zoom_queue_map].each do |zoom_range, queue_name| -%>
+    <%= zoom_range %>: <%= queue_name %>
+    <%- end -%>
+  <%- end -%>
 <%- end -%>
 <%- if node[:tileserver][:health][:enabled] -%>
 health:
