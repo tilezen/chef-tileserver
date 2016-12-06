@@ -65,7 +65,7 @@ queue:
 <%- end -%>
 <%- if node[:tileserver][:health][:enabled] -%>
 health:
-  url: <%= node[:tileserver][:health][:url] -%>
+  url: <%= node[:tileserver][:health][:url] %>
 <%- end -%>
 <%- if node[:tileserver][:metatile][:enabled] -%>
 metatile:
