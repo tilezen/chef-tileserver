@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.4.0
+-----
+* Add configuration for multisqs queue
+
 0.3.2
 -----
 * Fix whitespace error
