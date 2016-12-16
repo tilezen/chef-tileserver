@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.3.2
+-----
+* Fix whitespace error
+
+0.3.1
+-----
+* Add configuration for metatile settings
+
 0.3.0
 -----
 * Update revision variable name
