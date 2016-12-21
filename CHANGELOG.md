@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.4.1
+-----
+* Correct tilequeue -> tileserver attribute name
+
 0.4.0
 -----
 * Add configuration for multisqs queue
