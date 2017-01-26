@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.5.0
+-----
+* Peg ujson version
+
 0.4.1
 -----
 * Correct tilequeue -> tileserver attribute name
