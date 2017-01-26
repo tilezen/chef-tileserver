@@ -41,6 +41,7 @@ default[:tileserver][:pip_requirements] = %w(
   simplejson==3.6.4
   six==1.10.0
   StreetNames==0.1.5
+  ujson==1.35
   Werkzeug==0.9.6
   wsgiref==0.1.2
   zope.dottedname==4.1.0
