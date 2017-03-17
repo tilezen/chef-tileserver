@@ -81,6 +81,6 @@ metatile:
 <%- if node[:tileserver][:metatile][:path_tile_size] -%>
 path_tile_size:
 <%- node[:tileserver][:metatile][:path_tile_size].each do |path, size| -%>
-  <%= path %>: <%= size %>
+  "<%= path %>": <%= size %>
 <%- end -%>
 <%- end -%>
