@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.6.0
+-----
+* Peg appdirs==1.4.3.
+* Configure path_tile_size.
+
 0.5.0
 -----
 * Peg ujson version
