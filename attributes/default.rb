@@ -75,10 +75,9 @@ default[:tileserver][:health][:url] = '/_health'
 default[:tileserver][:formats] = nil
 default[:tileserver][:buffer] = nil
 
-default[:tileserver][:metatile][:enabled]                      = false
-default[:tileserver][:metatile][:size]                         = 1
-# mapping path => size
-default[:tileserver][:metatile][:path_tile_size]               = nil
+# mapping from request path to tile size
+# eg: {256 => 1, 512 => 2}
+default[:tileserver][:path_tile_size]                          = nil
 
 default[:tileserver][:cache][:enabled]                         = false
 default[:tileserver][:cache][:type]                            = nil
@@ -86,4 +85,4 @@ default[:tileserver][:cache][:type]                            = nil
 default[:tileserver][:cache][:redis][:url]                     = nil
 default[:tileserver][:cache][:redis][:options]                 = {}
 
-default[:tileserver][:cache][:file][:prefix]                  = nil
+default[:tileserver][:cache][:file][:prefix]                   = nil
