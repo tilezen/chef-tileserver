@@ -76,7 +76,6 @@ health:
 <%- if node[:tileserver][:metatile][:enabled] -%>
 metatile:
   size: <%= node[:tileserver][:metatile][:size] %>
-  store_metatile_and_originals: <%= node[:tileserver][:metatile][:store_metatile_and_originals] %>
 <%- end -%>
 <%- if node[:tileserver][:metatile][:path_tile_size] -%>
 path_tile_size:
