@@ -79,3 +79,11 @@ default[:tileserver][:metatile][:enabled]                      = false
 default[:tileserver][:metatile][:size]                         = 1
 # mapping path => size
 default[:tileserver][:metatile][:path_tile_size]               = nil
+
+default[:tileserver][:cache][:enabled]                         = false
+default[:tileserver][:cache][:type]                            = nil
+
+default[:tileserver][:cache][:redis][:url]                     = nil
+default[:tileserver][:cache][:redis][:options]                 = {}
+
+default[:tileserver][:cache][:file][:prefix]                  = nil
