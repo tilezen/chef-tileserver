@@ -73,13 +73,9 @@ queue:
 health:
   url: <%= node[:tileserver][:health][:url] %>
 <%- end -%>
-<%- if node[:tileserver][:metatile][:enabled] -%>
-metatile:
-  size: <%= node[:tileserver][:metatile][:size] %>
-<%- end -%>
-<%- if node[:tileserver][:metatile][:path_tile_size] -%>
+<%- if node[:tileserver][:path_tile_size] -%>
 path_tile_size:
-<%- node[:tileserver][:metatile][:path_tile_size].each do |path, size| -%>
+<%- node[:tileserver][:path_tile_size].each do |path, size| -%>
   "<%= path %>": <%= size %>
 <%- end -%>
 <%- end -%>
