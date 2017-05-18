@@ -83,3 +83,21 @@ path_tile_size:
   "<%= path %>": <%= size %>
 <%- end -%>
 <%- end -%>
+<%- if node[:tileserver][:cache][:enabled] -%>
+cache:
+  type: <%= node[:tileserver][:cache][:type] %>
+<%- if node[:tileserver][:cache][:type] == 'redis' -%>
+  redis:
+    url: <%= node[:tileserver][:cache][:redis][:url] %>
+<%- if node[:tileserver][:cache][:redis][:options] && !node[:tileserver][:cache][:redis][:options].empty? -%>
+    options:
+<%- node[:tileserver][:cache][:redis][:options].each do |redis_option_key, redis_option_val| -%>
+      <%= redis_option_key %>: <%= redis_option_val %>
+<%- end -%>
+<%- end -%>
+<%- end -%>
+<%- if node[:tileserver][:cache][:type] == 'file' -%>
+  file:
+    prefix: <%= node[:tileserver][:cache][:file][:prefix] %>
+<%- end -%>
+<%- end -%>
