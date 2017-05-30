@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.7.0
+-----
+* Remove store_metatile_and_originals configuration
+* Add cache configuration
+* Remove no longer used metatile size config
+
 0.6.0
 -----
 * Peg appdirs==1.4.3.
