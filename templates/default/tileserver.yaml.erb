@@ -97,3 +97,7 @@ cache:
     prefix: <%= node[:tileserver][:cache][:file][:prefix] %>
 <%- end -%>
 <%- end -%>
+yaml:
+  type: parse
+  parse:
+    path: <%= node[:tileserver][:vector_datasource][:path] %>/yaml
