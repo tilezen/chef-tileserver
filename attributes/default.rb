@@ -50,10 +50,10 @@ default[:tileserver][:pip_requirements] = %w(
 )
 
 default[:tileserver][:pip_requirements] += [
-  "git+https://github.com/mapzen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
-  "git+https://github.com/mapzen/raw_tiles@#{node[:tileserver][:revision][:raw_tiles]}#egg=raw_tiles",
-  "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
-  "git+https://github.com/mapzen/tileserver@#{node[:tileserver][:revision][:tileserver]}#egg=tileserver"
+  "git+https://github.com/tilezen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
+  "git+https://github.com/tilezen/raw_tiles@#{node[:tileserver][:revision][:raw_tiles]}#egg=raw_tiles",
+  "git+https://github.com/tilezen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
+  "git+https://github.com/tilezen/tileserver@#{node[:tileserver][:revision][:tileserver]}#egg=tileserver"
 ]
 
 default[:tileserver][:postgresql][:host] = 'localhost'
