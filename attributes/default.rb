@@ -14,7 +14,7 @@ default[:tileserver][:gunicorn][:access_log_format] = '%(h)s %(l)s %(u)s %(t)s "
 
 default[:tileserver][:runit][:svwait] = 180
 
-default[:tileserver][:revision][:tilestache] = 'integration-1'
+default[:tileserver][:revision][:raw_tiles] = 'master'
 default[:tileserver][:revision][:tilequeue] = 'master'
 default[:tileserver][:revision][:mapbox_vector_tile] = 'master'
 default[:tileserver][:revision][:tileserver] = 'master'
@@ -51,6 +51,7 @@ default[:tileserver][:pip_requirements] = %w(
 
 default[:tileserver][:pip_requirements] += [
   "git+https://github.com/mapzen/mapbox-vector-tile@#{node[:tileserver][:revision][:mapbox_vector_tile]}#egg=mapbox-vector-tile",
+  "git+https://github.com/mapzen/raw_tiles@#{node[:tileserver][:revision][:raw_tiles]}#egg=raw_tiles",
   "git+https://github.com/mapzen/tilequeue@#{node[:tileserver][:revision][:tilequeue]}#egg=tilequeue",
   "git+https://github.com/mapzen/tileserver@#{node[:tileserver][:revision][:tileserver]}#egg=tileserver"
 ]
