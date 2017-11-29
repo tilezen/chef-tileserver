@@ -1,6 +1,7 @@
 LineLength:
   Max: 250
-SingleSpaceBeforeFirstArg:
-  Enabled: false
 SpaceBeforeFirstArg:
   Enabled: false
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '()'

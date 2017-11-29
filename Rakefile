@@ -34,4 +34,6 @@ def prepare_sandbox(sandbox)
   rm_rf sandbox
   mkdir_p sandbox
   cp_r Dir.glob("{#{files.join(',')}}"), sandbox
+  # make sure Rakefile is executable
+  FileUtils.chmod 0o755, File.join(sandbox, 'Rakefile')
 end
